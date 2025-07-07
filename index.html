@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSOF | Del Concepto al Concreto</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Inter:wght@400;500;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon (using the main logo) -->
+    <link rel="icon" href="https://raw.githubusercontent.com/Claudidu/consof2/main/Assets/Screenshot_1.png" type="image/png">
+
+    <style>
+        /* Custom Font Families */
+        .font-dexens { font-family: 'Jost', sans-serif; } /* Alternative for DEXENS */
+        .font-nokia-expanded { font-family: 'Exo 2', sans-serif; } /* Alternative for NOKIA EXPANDED */
+        .font-helvetica-neue { font-family: 'Inter', sans-serif; } /* Alternative for Helvetica Neue */
+
+        /* Animation for elements fading in on scroll */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-element {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        /* Background with tracing lines pattern */
+        .bg-tracing-lines {
+            background-image: url('https://raw.githubusercontent.com/Claudidu/consof2/main/Assets/Screenshot_2.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-white font-helvetica-neue text-[#374548]">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="w-32 md:w-40">
+                <img src="https://raw.githubusercontent.com/Claudidu/consof2/main/Assets/Screenshot_1.png" alt="Logo CONSOF" class="w-full h-auto">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#nosotros" class="font-dexens text-white hover:text-[#F78D53] transition-colors">Nosotros</a>
+                <a href="#servicios" class="font-dexens text-white hover:text-[#F78D53] transition-colors">Servicios</a>
+                <a href="#proyectos" class="font-dexens text-white hover:text-[#F78D53] transition-colors">Proyectos</a>
+                <a href="#contacto" class="font-dexens bg-[#F78D53] text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-all">Contáctanos</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-[#374548] bg-opacity-95 z-40 lg:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#nosotros" class="font-dexens text-2xl text-white hover:text-[#F78D53] transition-colors">Nosotros</a>
+            <a href="#servicios" class="font-dexens text-2xl text-white hover:text-[#F78D53] transition-colors">Servicios</a>
+            <a href="#proyectos" class="font-dexens text-2xl text-white hover:text-[#F78D53] transition-colors">Proyectos</a>
+            <a href="#contacto" class="font-dexens text-2xl bg-[#F78D53] text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-all">Contáctanos</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="h-screen min-h-[600px] bg-cover bg-center bg-fixed flex items-center justify-center relative" style="background-image: url('https://images.unsplash.com/photo-1581092446327-9b52bd4a0038?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="absolute inset-0 bg-[#374548] opacity-70"></div>
+            <div class="container mx-auto px-6 text-center text-white z-10">
+                <h1 class="font-dexens text-4xl md:text-6xl lg:text-7xl font-light leading-tight animate-fade-in-up">Del concepto al concreto.</h1>
+                <p class="font-helvetica-neue text-lg md:text-xl max-w-3xl mx-auto mt-4 animate-fade-in-up" style="animation-delay: 0.3s;">Transformamos ideas en espacios que se habitan, se recuerdan y se admiran.</p>
+            </div>
+        </section>
+
+        <!-- Value Proposition -->
+        <section id="nosotros" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 text-center max-w-4xl scroll-target">
+                <h2 class="font-nokia-expanded text-2xl md:text-3xl font-bold uppercase tracking-wider text-[#374548]">CONSOF</h2>
+                <p class="font-dexens text-xl md:text-2xl mt-6 text-[#374548] leading-relaxed">
+                    Acompaña con <span class="text-[#F78D53]">visión y alma</span> la ejecución de proyectos únicos, integrando en un solo proceso todos los servicios clave para una ejecución 360°, que cierra la brecha entre diseño y obra, y brinda al cliente eficiencia, protección y total tranquilidad.
+                </p>
+            </div>
+        </section>
+
+        <!-- Manifesto Section -->
+        <section class="py-20 md:py-32 bg-[#f8f9fa]">
+             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="scroll-target">
+                    <h3 class="font-nokia-expanded text-3xl md:text-4xl font-bold uppercase tracking-wider text-[#374548]">DEL CONCEPTO<br>AL CONCRETO</h3>
+                    <p class="font-helvetica-neue mt-6 text-lg text-[#374548]">
+                        En CONSOF entendimos que cada espacio fue una idea con potencial, una historia que esperaba ser contada y por eso todo inicia buscando un concepto, una visión, una necesidad o un deseo para llevarlo al concreto, a lo tangible, a lo funcional, a lo habitable.
+                    </p>
+                    <p class="font-helvetica-neue mt-4 text-lg text-[#374548]">
+                        Del concepto al concreto es nuestra promesa, es el camino que recorremos junto a cada cliente, transformando ideas en experiencias, bocetos en estructuras y emociones en espacios con alma.
+                    </p>
+                    <ul class="mt-8 space-y-4 font-dexens text-lg text-[#374548]">
+                        <li class="flex items-center"><span class="text-[#F78D53] mr-3 text-2xl">&#8226;</span> SOMOS DISEÑADORES DE LO POSIBLE.</li>
+                        <li class="flex items-center"><span class="text-[#F78D53] mr-3 text-2xl">&#8226;</span> SOMOS CONSTRUCTORES DE LO SIGNIFICATIVO.</li>
+                        <li class="flex items-center"><span class="text-[#F78D53] mr-3 text-2xl">&#8226;</span> SOMOS DECORADORES DE LO MEMORABLE.</li>
+                    </ul>
+                </div>
+                <div class="h-full min-h-[400px] rounded-lg bg-tracing-lines scroll-target">
+                    <!-- The background image is set here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto scroll-target">
+                    <h2 class="font-nokia-expanded text-3xl md:text-4xl font-bold uppercase tracking-wider text-[#374548]">Nuestros Servicios</h2>
+                    <p class="font-dexens text-xl mt-4 text-gray-600">Soluciones integrales para cada etapa de tu proyecto.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+                    <!-- Service 1 -->
+                    <div class="bg-gray-50 p-8 rounded-lg text-center border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 scroll-target">
+                        <div class="inline-block p-4 bg-[#F78D53] rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/></svg>
+                        </div>
+                        <h3 class="font-dexens text-xl font-semibold mt-6 text-[#374548]">Diseño y Construcción</h3>
+                        <p class="mt-2 text-gray-500 font-helvetica-neue">Proyectos civiles desde la concepción hasta la entrega final.</p>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="bg-gray-50 p-8 rounded-lg text-center border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 scroll-target">
+                        <div class="inline-block p-4 bg-[#F78D53] rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                        </div>
+                        <h3 class="font-dexens text-xl font-semibold mt-6 text-[#374548]">Remodelación y Adecuaciones</h3>
+                        <p class="mt-2 text-gray-500 font-helvetica-neue">Transformamos espacios existentes con funcionalidad y estilo.</p>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="bg-gray-50 p-8 rounded-lg text-center border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 scroll-target">
+                        <div class="inline-block p-4 bg-[#F78D53] rounded-full">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                        </div>
+                        <h3 class="font-dexens text-xl font-semibold mt-6 text-[#374548]">Mantenimiento Locativo</h3>
+                        <p class="mt-2 text-gray-500 font-helvetica-neue">Planes preventivos y correctivos para garantizar la longevidad.</p>
+                    </div>
+                     <!-- Service 4 -->
+                    <div class="bg-gray-50 p-8 rounded-lg text-center border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 scroll-target">
+                        <div class="inline-block p-4 bg-[#F78D53] rounded-full">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        </div>
+                        <h3 class="font-dexens text-xl font-semibold mt-6 text-[#374548]">Consultoría Técnica</h3>
+                        <p class="mt-2 text-gray-500 font-helvetica-neue">Asesoría experta para la toma de decisiones estratégicas.</p>
+                    </div>
+                     <!-- Service 5 -->
+                    <div class="bg-gray-50 p-8 rounded-lg text-center border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 scroll-target">
+                        <div class="inline-block p-4 bg-[#F78D53] rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                        </div>
+                        <h3 class="font-dexens text-xl font-semibold mt-6 text-[#374548]">Soluciones Especializadas</h3>
+                        <p class="mt-2 text-gray-500 font-helvetica-neue">Respuestas a medida para desafíos constructivos únicos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section id="proyectos" class="py-20 md:py-32 bg-[#f8f9fa]">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto scroll-target">
+                    <h2 class="font-nokia-expanded text-3xl md:text-4xl font-bold uppercase tracking-wider text-[#374548]">Proyectos Destacados</h2>
+                    <p class="font-dexens text-xl mt-4 text-gray-600">Donde las ideas se convierten en realidad.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 mt-16">
+                    <!-- Project 1 -->
+                    <div class="group relative overflow-hidden rounded-lg scroll-target">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Proyecto Residencial Moderno" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#374548] to-transparent opacity-80"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white">
+                            <h3 class="font-nokia-expanded text-2xl font-bold">CASA HORIZONTE</h3>
+                            <p class="font-dexens mt-2">Residencial | Medellín</p>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="group relative overflow-hidden rounded-lg scroll-target">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Proyecto Comercial" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#374548] to-transparent opacity-80"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white">
+                            <h3 class="font-nokia-expanded text-2xl font-bold">OFICINAS NEXUS</h3>
+                            <p class="font-dexens mt-2">Comercial | Bogotá</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 text-center max-w-4xl scroll-target">
+                <h2 class="font-nokia-expanded text-3xl md:text-4xl font-bold uppercase tracking-wider text-[#374548]">Nuestros Clientes</h2>
+                <p class="font-dexens text-xl mt-4 text-gray-600">La confianza es nuestro cimiento más sólido.</p>
+                <div class="mt-16">
+                    <blockquote class="text-2xl font-dexens text-[#374548] italic">
+                        “El equipo de CONSOF no solo construyó nuestras oficinas, sino que entendieron nuestra visión y la llevaron a la realidad con una ejecución impecable. Su profesionalismo y cercanía hicieron toda la diferencia.”
+                    </blockquote>
+                    <p class="font-nokia-expanded mt-8 font-bold text-lg">- CEO, EMPRESA CREATIVA</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section id="contacto" class="bg-[#B0A69B] text-white">
+            <div class="container mx-auto px-6 py-20 text-center scroll-target">
+                <h2 class="font-dexens text-3xl md:text-4xl">¿Tienes un proyecto en mente?</h2>
+                <p class="font-helvetica-neue mt-4 max-w-2xl mx-auto">Hagamos que suceda. Contáctanos y empecemos a construir juntos tu próxima gran idea.</p>
+                <a href="#" class="inline-block mt-8 font-dexens bg-[#F78D53] text-white px-10 py-4 rounded-md hover:bg-opacity-90 transition-all text-lg font-bold">Iniciar Conversación</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#374548] text-[#ADB9BA]">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Brand Story -->
+                <div class="md:col-span-1">
+                    <img src="https://raw.githubusercontent.com/Claudidu/consof2/main/Assets/Screenshot_1.png" alt="Logo CONSOF" class="w-32 mb-4 opacity-80">
+                    <p class="font-helvetica-neue text-sm">
+                        En CONSOF, creemos que los espacios son manifestaciones vivas de una idea. Combinamos técnica con sensibilidad y creatividad con ingeniería para crear lugares que se habitan, se recuerdan y se admiran.
+                    </p>
+                </div>
+                <!-- Links -->
+                <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                        <h4 class="font-nokia-expanded font-bold text-white uppercase">Navegación</h4>
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li><a href="#nosotros" class="hover:text-white transition-colors">Nosotros</a></li>
+                            <li><a href="#servicios" class="hover:text-white transition-colors">Servicios</a></li>
+                            <li><a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a></li>
+                            <li><a href="#contacto" class="hover:text-white transition-colors">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-nokia-expanded font-bold text-white uppercase">Recursos</h4>
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-nokia-expanded font-bold text-white uppercase">Contacto</h4>
+                        <ul class="mt-4 space-y-2 text-sm">
+                            <li><a href="mailto:info@consof.com" class="hover:text-white transition-colors">info@consof.com</a></li>
+                            <li><p>Medellín, Colombia</p></li>
+                        </ul>
+                    </div>
+                    <!-- Social Media -->
+                    <div>
+                        <h4 class="font-nokia-expanded font-bold text-white uppercase">Social</h4>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" aria-label="LinkedIn" class="text-[#ADB9BA] hover:text-white transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href="#" aria-label="Instagram" class="text-[#ADB9BA] hover:text-white transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
+                            </a>
+                            <a href="#" aria-label="Behance" class="text-[#ADB9BA] hover:text-white transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 7h-7v-2h7v2zm1.732 6c-.445 1.72-1.48 3.183-3.182 4.163-.61.353-1.305.537-2.05.537-1.241 0-2.252-.583-2.888-1.527-.635-.945-.953-2.23-.953-3.856h3.21c0 .998.145 1.737.433 2.217s.71.72 1.264.72c.554 0 .98-.24 1.28-.72s.45-.96.45-1.44c0-.554-.15-1.02-.45-1.404s-.73-.576-1.29-.576h-1.92v-2.18h1.86c.976 0 1.636-.49 1.98-1.468.345-.98.345-2.04 0-3.18h3.5c.21 1.28.21 2.52 0 3.72zm-12.732-4h-4v4h4c1.104 0 2 .896 2 2s-.896 2-2 2h-4v4h-2v-12h6c1.104 0 2 .896 2 2s-.896 2-2 2zm-6 6h4v-4h-4v4z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8">
+                <div class="container mx-auto px-6 py-4 text-center text-sm text-gray-500">
+                    <p>&copy; 2024 CONSOF. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#128C7E] transition-colors z-30">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.398 1.919 6.121l-1.274 4.645 4.818-1.251z"/></svg>
+    </a>
+
+    <script>
+        // JavaScript for Header background change on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-[#374548]', 'shadow-lg');
+            } else {
+                header.classList.remove('bg-[#374548]', 'shadow-lg');
+            }
+        });
+
+        // JavaScript for Mobile Menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Close menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // JavaScript for Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-element');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-target').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

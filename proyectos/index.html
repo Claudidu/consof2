@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | CONSOF</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Inter:wght@400;500;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/Claudidu/consof2/main/Assets/Screenshot_1.png" type="image/png">
+
+    <style>
+        /* Custom Font Families */
+        .font-dexens { font-family: 'Jost', sans-serif; }
+        .font-nokia-expanded { font-family: 'Exo 2', sans-serif; }
+        .font-helvetica-neue { font-family: 'Inter', sans-serif; }
+
+        /* Masonry-like layout for projects */
+        .masonry-container {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .masonry-container {
+                column-count: 2;
+            }
+        }
+        .masonry-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            break-inside: avoid;
+        }
+        
+        /* Card hover effect */
+        .project-card .card-content {
+            transform: translateY(100%);
+            transition: transform 0.5s ease-in-out;
+        }
+        .project-card:hover .card-content {
+            transform: translateY(0);
+        }
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-white font-helvetica-neue text-[#374548]">
+
+    <!-- Header (Active state for 'Proyectos') -->
+    <header id="header" class="sticky top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#374548] shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="w-32 md:w-40"> <!-- Link to homepage -->
+                <img src="https://raw.githubusercontent.com/Claudidu/consof2/main/Assets/Screenshot_1.png" alt="Logo CONSOF" class="w-full h-auto">
+            </a>
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="index.html#nosotros" class="font-dexens text-white hover:text-[#F78D53] transition-colors">Nosotros</a>
+                <a href="servicios.html" class="font-dexens text-white hover:text-[#F78D53] transition-colors">Servicios</a>
+                <a href="#" class="font-dexens text-[#F78D53] font-bold">Proyectos</a> <!-- Active page -->
+                <a href="index.html#contacto" class="font-dexens bg-[#F78D53] text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-all">Contáctanos</a>
+            </nav>
+            <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-[#374548] bg-opacity-95 z-40 lg:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="index.html#nosotros" class="font-dexens text-2xl text-white">Nosotros</a>
+            <a href="servicios.html" class="font-dexens text-2xl text-white">Servicios</a>
+            <a href="#" class="font-dexens text-2xl text-[#F78D53] font-bold">Proyectos</a>
+            <a href="index.html#contacto" class="font-dexens text-2xl bg-[#F78D53] text-white px-8 py-3 rounded-md">Contáctanos</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16 md:py-24">
+        <!-- Page Title -->
+        <div class="text-center mb-12 md:mb-16">
+            <h1 class="font-nokia-expanded text-4xl md:text-5xl font-bold uppercase tracking-wider text-[#374548]">Nuestros Proyectos</h1>
+            <p class="font-dexens text-xl mt-4 text-gray-600 max-w-2xl mx-auto">Donde las ideas se convierten en realidad. Espacios que se habitan, se recuerdan y se admiran.</p>
+        </div>
+
+        <!-- Projects Masonry Grid -->
+        <div class="masonry-container">
+            <!-- Project Card 1 -->
+            <div class="masonry-item">
+                <div class="project-card group relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="[Casa moderna con piscina]" class="w-full h-auto object-cover transition-transform duration-500 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="card-content absolute inset-0 flex flex-col justify-end p-6 md:p-8 text-white bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                        <h3 class="font-nokia-expanded text-2xl font-bold">CASA VENTO</h3>
+                        <p class="font-dexens text-sm uppercase tracking-wider text-gray-300">Residencial | Rionegro</p>
+                        <p class="font-helvetica-neue text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Diseño y construcción de una residencia de lujo que se integra con el paisaje, priorizando la luz natural y los espacios abiertos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="masonry-item">
+                <div class="project-card group relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="[Oficina corporativa moderna y colaborativa]" class="w-full h-auto object-cover transition-transform duration-500 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="card-content absolute inset-0 flex flex-col justify-end p-6 md:p-8 text-white bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                        <h3 class="font-nokia-expanded text-2xl font-bold">NEXUS TOWER</h3>
+                        <p class="font-dexens text-sm uppercase tracking-wider text-gray-300">Corporativo | Bogotá D.C.</p>
+                        <p class="font-helvetica-neue text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Adecuación integral de oficinas para un hub tecnológico, creando un entorno de trabajo dinámico y colaborativo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="masonry-item">
+                <div class="project-card group relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="[Interior de un restaurante elegante]" class="w-full h-auto object-cover transition-transform duration-500 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="card-content absolute inset-0 flex flex-col justify-end p-6 md:p-8 text-white bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                        <h3 class="font-nokia-expanded text-2xl font-bold">RESTAURANTE ORIGEN</h3>
+                        <p class="font-dexens text-sm uppercase tracking-wider text-gray-300">Comercial | Medellín</p>
+                        <p class="font-helvetica-neue text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Construcción y diseño de interiores para un restaurante de alta cocina, enfocados en crear una atmósfera única y memorable.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 4 -->
+            <div class="masonry-item">
+                <div class="project-card group relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="[Lobby de un hotel boutique de lujo]" class="w-full h-auto object-cover transition-transform duration-500 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="card-content absolute inset-0 flex flex-col justify-end p-6 md:p-8 text-white bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                        <h3 class="font-nokia-expanded text-2xl font-bold">HOTEL SERENO</h3>
+                        <p class="font-dexens text-sm uppercase tracking-wider text-gray-300">Hotelería | Cartagena</p>
+                        <p class="font-helvetica-neue text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Remodelación completa de un hotel boutique, combinando el encanto histórico con el lujo y confort moderno.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 5 -->
+            <div class="masonry-item">
+                <div class="project-card group relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1556912173-353abe0c4563?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="[Tienda de moda minimalista y elegante]" class="w-full h-auto object-cover transition-transform duration-500 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="card-content absolute inset-0 flex flex-col justify-end p-6 md:p-8 text-white bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                        <h3 class="font-nokia-expanded text-2xl font-bold">TIENDA ALMA</h3>
+                        <p class="font-dexens text-sm uppercase tracking-wider text-gray-300">Retail | El Poblado</p>
+                        <p class="font-helvetica-neue text-sm mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">Adecuación de local comercial para una marca de moda, con mobiliario a medida y un diseño que resalta el producto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#374548] text-[#ADB9BA] mt-16 md:mt-24">
+        <!-- Footer content will be injected by JS -->
+    </footer>
+
+    <script>
+        // --- Mobile Menu ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Dynamic Footer ---
+        document.querySelector('footer').innerHTML = `
+            <div class="container mx-auto px-6 py-12">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="md:col-span-1">
+                        <img src="https://raw.githubusercontent.com/Claudidu/consof2/main/Assets/Screenshot_1.png" alt="Logo CONSOF" class="w-32 mb-4 opacity-80">
+                        <p class="font-helvetica-neue text-sm">
+                            En CONSOF, creemos que los espacios son manifestaciones vivas de una idea. Combinamos técnica con sensibilidad y creatividad con ingeniería para crear lugares que se habitan, se recuerdan y se admiran.
+                        </p>
+                    </div>
+                    <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h4 class="font-nokia-expanded font-bold text-white uppercase">Navegación</h4>
+                            <ul class="mt-4 space-y-2 text-sm">
+                                <li><a href="index.html#nosotros" class="hover:text-white transition-colors">Nosotros</a></li>
+                                <li><a href="servicios.html" class="hover:text-white transition-colors">Servicios</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">Proyectos</a></li>
+                                <li><a href="index.html#contacto" class="hover:text-white transition-colors">Contacto</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-nokia-expanded font-bold text-white uppercase">Recursos</h4>
+                            <ul class="mt-4 space-y-2 text-sm">
+                                <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-nokia-expanded font-bold text-white uppercase">Contacto</h4>
+                            <ul class="mt-4 space-y-2 text-sm">
+                                <li><a href="mailto:info@consof.com" class="hover:text-white transition-colors">info@consof.com</a></li>
+                                <li><p>Medellín, Colombia</p></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-nokia-expanded font-bold text-white uppercase">Social</h4>
+                            <div class="flex space-x-4 mt-4">
+                                <a href="#" aria-label="LinkedIn" class="text-[#ADB9BA] hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                                <a href="#" aria-label="Instagram" class="text-[#ADB9BA] hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg></a>
+                                <a href="#" aria-label="Behance" class="text-[#ADB9BA] hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 7h-7v-2h7v2zm1.732 6c-.445 1.72-1.48 3.183-3.182 4.163-.61.353-1.305.537-2.05.537-1.241 0-2.252-.583-2.888-1.527-.635-.945-.953-2.23-.953-3.856h3.21c0 .998.145 1.737.433 2.217s.71.72 1.264.72c.554 0 .98-.24 1.28-.72s.45-.96.45-1.44c0-.554-.15-1.02-.45-1.404s-.73-.576-1.29-.576h-1.92v-2.18h1.86c.976 0 1.636-.49 1.98-1.468.345-.98.345-2.04 0-3.18h3.5c.21 1.28.21 2.52 0 3.72zm-12.732-4h-4v4h4c1.104 0 2 .896 2 2s-.896 2-2 2h-4v4h-2v-12h6c1.104 0 2 .896 2 2s-.896 2-2 2zm-6 6h4v-4h-4v4z"/></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8">
+                    <div class="container mx-auto px-6 py-4 text-center text-sm text-gray-500">
+                        <p>&copy; 2024 CONSOF. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | CONSOF</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Inter:wght@400;500;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/Claudidu/consof2/main/Assets/Screenshot_1.png" type="image/png">
+
+    <style>
+        /* Custom Font Families */
+        .font-dexens { font-family: 'Jost', sans-serif; }
+        .font-nokia-expanded { font-family: 'Exo 2', sans-serif; }
+        .font-helvetica-neue { font-family: 'Inter', sans-serif; }
+
+        /* Mosaic Grid Layout */
+        .mosaic-grid {
+            display: grid;
+            gap: 1.5rem; /* 24px */
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: minmax(200px, auto);
+        }
+        
+        /* Spanning for different cards */
+        .card-1 { grid-column: span 12; md:grid-column: span 7; }
+        .card-2 { grid-column: span 12; md:grid-column: span 5; }
+        .card-3 { grid-column: span 12; md:grid-column: span 6; }
+        .card-4 { grid-column: span 12; md:grid-column: span 6; }
+        .card-5 { grid-column: span 12; }
+
+        @media (min-width: 768px) {
+            .card-1 { grid-row: span 2; }
+            .card-3 { height: 450px; }
+            .card-4 { height: 450px; }
+        }
+
+        /* Modal styles */
+        .modal-backdrop {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .modal-content {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(20px);
+        }
+        .modal-active .modal-content {
+            transform: translateY(0);
+        }
+        
+        /* Custom list style */
+        .custom-list li::before {
+            content: '•';
+            color: #F78D53;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+    </style>
+</head>
+<body class="bg-[#f8f9fa] font-helvetica-neue text-[#374548]">
+
+    <!-- Header (Same as homepage, but with active state for 'Servicios') -->
+    <header id="header" class="sticky top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#374548] shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="w-32 md:w-40"> <!-- Link to homepage -->
+                <img src="https://raw.githubusercontent.com/Claudidu/consof2/main/Assets/Screenshot_1.png" alt="Logo CONSOF" class="w-full h-auto">
+            </a>
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="index.html#nosotros" class="font-dexens text-white hover:text-[#F78D53] transition-colors">Nosotros</a>
+                <a href="#" class="font-dexens text-[#F78D53] font-bold">Servicios</a> <!-- Active page -->
+                <a href="index.html#proyectos" class="font-dexens text-white hover:text-[#F78D53] transition-colors">Proyectos</a>
+                <a href="index.html#contacto" class="font-dexens bg-[#F78D53] text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-all">Contáctanos</a>
+            </nav>
+            <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-[#374548] bg-opacity-95 z-40 lg:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="index.html#nosotros" class="font-dexens text-2xl text-white">Nosotros</a>
+            <a href="#" class="font-dexens text-2xl text-[#F78D53] font-bold">Servicios</a>
+            <a href="index.html#proyectos" class="font-dexens text-2xl text-white">Proyectos</a>
+            <a href="index.html#contacto" class="font-dexens text-2xl bg-[#F78D53] text-white px-8 py-3 rounded-md">Contáctanos</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16 md:py-24">
+        <!-- Page Title -->
+        <div class="text-center mb-12 md:mb-16">
+            <h1 class="font-nokia-expanded text-4xl md:text-5xl font-bold uppercase tracking-wider text-[#374548]">Nuestros Servicios</h1>
+            <p class="font-dexens text-xl mt-4 text-gray-600 max-w-2xl mx-auto">Soluciones 360° que cierran la brecha entre el diseño y la obra, brindando eficiencia, protección y total tranquilidad.</p>
+        </div>
+
+        <!-- Services Mosaic Grid -->
+        <div class="mosaic-grid">
+            <!-- Service Card 1 -->
+            <div class="card-1 service-card group relative rounded-lg overflow-hidden cursor-pointer" data-service="1">
+                <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=2124&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="[Diseño arquitectónico y planos]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#374548] via-[#374548]/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white">
+                    <h3 class="font-nokia-expanded text-2xl font-bold">Diseño y Construcción</h3>
+                    <p class="font-dexens mt-2 opacity-90">De la visión a la realidad tangible.</p>
+                </div>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="card-2 service-card group relative rounded-lg overflow-hidden cursor-pointer" data-service="2">
+                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="[Espacio comercial moderno siendo remodelado]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#374548] via-[#374548]/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white">
+                    <h3 class="font-nokia-expanded text-2xl font-bold">Remodelación y Adecuaciones</h3>
+                    <p class="font-dexens mt-2 opacity-90">Renovamos y optimizamos tus espacios.</p>
+                </div>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="card-3 service-card group relative rounded-lg overflow-hidden cursor-pointer" data-service="3">
+                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="[Equipo de ingenieros revisando planos]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#374548] via-[#374548]/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white">
+                    <h3 class="font-nokia-expanded text-2xl font-bold">Consultoría Técnica</h3>
+                    <p class="font-dexens mt-2 opacity-90">Visión 360° para tu proyecto.</p>
+                </div>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="card-4 service-card group relative rounded-lg overflow-hidden cursor-pointer" data-service="4">
+                <img src="https://images.unsplash.com/photo-1581092916346-3d1b4a7a8556?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="[Trabajador realizando mantenimiento industrial]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#374548] via-[#374548]/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white">
+                    <h3 class="font-nokia-expanded text-2xl font-bold">Mantenimiento Locativo</h3>
+                    <p class="font-dexens mt-2 opacity-90">Cuidado preventivo y correctivo.</p>
+                </div>
+            </div>
+            
+            <!-- Service Card 5 -->
+            <div class="card-5 service-card group relative rounded-lg overflow-hidden cursor-pointer" data-service="5">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="[Detalle de instalaciones técnicas complejas]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#374548] via-[#374548]/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white">
+                    <h3 class="font-nokia-expanded text-2xl font-bold">Soluciones Técnicas Especializadas</h3>
+                    <p class="font-dexens mt-2 opacity-90">Ingeniería de detalle para cada necesidad.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="service-modal" class="modal-backdrop fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
+        <div id="modal-content" class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8 md:p-10 opacity-0">
+            <div class="flex justify-between items-start mb-6">
+                <h2 id="modal-title" class="font-nokia-expanded text-2xl md:text-3xl font-bold text-[#374548]"></h2>
+                <button id="close-modal" class="text-gray-400 hover:text-gray-800 transition-colors">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div id="modal-body" class="font-helvetica-neue text-gray-600 leading-relaxed">
+                <!-- Service details will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Same as homepage) -->
+    <footer class="bg-[#374548] text-[#ADB9BA] mt-16 md:mt-24">
+        <!-- Footer content from index.html -->
+    </footer>
+
+    <script>
+        // --- Mobile Menu ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Service Modal ---
+        const services = {
+            '1': {
+                title: 'Diseño y Construcción de Proyectos Civiles',
+                details: `
+                    <ul class="space-y-3 custom-list pl-4">
+                        <li>Diseño arquitectónico.</li>
+                        <li>Construcción de obra nueva (comercial, residencial y corporativa).</li>
+                    </ul>
+                `
+            },
+            '2': {
+                title: 'Remodelación y Adecuaciones Integrales',
+                details: `
+                    <ul class="space-y-3 custom-list pl-4">
+                        <li>Intervenciones para expansión de marca, optimización de espacios o actualización de imagen.</li>
+                        <li>Reformas en oficinas, locales comerciales, restaurantes, hoteles.</li>
+                        <li>Obras civiles menores y adecuaciones personalizadas.</li>
+                    </ul>
+                `
+            },
+            '3': {
+                title: 'Consultoría Técnica',
+                details: `
+                    <ul class="space-y-3 custom-list pl-4">
+                        <li>Análisis normativo, diseño técnico y viabilidad constructiva.</li>
+                        <li>Asesoría en etapas tempranas del proyecto.</li>
+                        <li>Planeación y dirección de obra desde una visión 360°.</li>
+                    </ul>
+                `
+            },
+            '4': {
+                title: 'Mantenimiento Locativo',
+                details: `
+                    <p class="mb-4">Planes preventivos y correctivos para garantizar la longevidad y funcionalidad de tus espacios.</p>
+                    <ul class="space-y-3 custom-list pl-4">
+                        <li>Mantenimiento programado de espacios industriales y comerciales.</li>
+                        <li>Reparaciones civiles, eléctricas, sanitarias, acabados.</li>
+                    </ul>
+                `
+            },
+            '5': {
+                title: 'Soluciones Técnicas Especializadas',
+                details: `
+                    <ul class="space-y-3 custom-list pl-4">
+                        <li>Instalaciones eléctricas, hidráulicas, sanitarias y de redes de gas.</li>
+                        <li>Sistemas de ventilación, aire acondicionado y redes contra incendio.</li>
+                        <li>Redes de datos, CCTV, automatización, cerraduras electrónicas.</li>
+                        <li>Carpintería metálica y en madera, mobiliario.</li>
+                        <li>Señalética y diseño gráfico corporativo en espacios.</li>
+                    </ul>
+                `
+            }
+        };
+
+        const serviceCards = document.querySelectorAll('.service-card');
+        const modal = document.getElementById('service-modal');
+        const modalContent = document.getElementById('modal-content');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const closeModalButton = document.getElementById('close-modal');
+
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const serviceId = card.dataset.service;
+                const serviceData = services[serviceId];
+
+                modalTitle.textContent = serviceData.title;
+                modalBody.innerHTML = serviceData.details;
+
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modalContent.classList.remove('opacity-0');
+                    modalContent.style.transform = 'translateY(0)';
+                }, 10); // Short delay for transition
+            });
+        });
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('opacity-0');
+            modalContent.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300); // Match transition duration
+        }
+
+        closeModalButton.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Add footer content dynamically to avoid repetition
+        document.querySelector('footer').innerHTML = `
+            <div class="container mx-auto px-6 py-12">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="md:col-span-1">
+                        <img src="https://raw.githubusercontent.com/Claudidu/consof2/main/Assets/Screenshot_1.png" alt="Logo CONSOF" class="w-32 mb-4 opacity-80">
+                        <p class="font-helvetica-neue text-sm">
+                            En CONSOF, creemos que los espacios son manifestaciones vivas de una idea. Combinamos técnica con sensibilidad y creatividad con ingeniería para crear lugares que se habitan, se recuerdan y se admiran.
+                        </p>
+                    </div>
+                    <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h4 class="font-nokia-expanded font-bold text-white uppercase">Navegación</h4>
+                            <ul class="mt-4 space-y-2 text-sm">
+                                <li><a href="index.html#nosotros" class="hover:text-white transition-colors">Nosotros</a></li>
+                                <li><a href="#" class="hover:text-white transition-colors">Servicios</a></li>
+                                <li><a href="index.html#proyectos" class="hover:text-white transition-colors">Proyectos</a></li>
+                                <li><a href="index.html#contacto" class="hover:text-white transition-colors">Contacto</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-nokia-expanded font-bold text-white uppercase">Recursos</h4>
+                            <ul class="mt-4 space-y-2 text-sm">
+                                <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-nokia-expanded font-bold text-white uppercase">Contacto</h4>
+                            <ul class="mt-4 space-y-2 text-sm">
+                                <li><a href="mailto:info@consof.com" class="hover:text-white transition-colors">info@consof.com</a></li>
+                                <li><p>Medellín, Colombia</p></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-nokia-expanded font-bold text-white uppercase">Social</h4>
+                            <div class="flex space-x-4 mt-4">
+                                <a href="#" aria-label="LinkedIn" class="text-[#ADB9BA] hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                                <a href="#" aria-label="Instagram" class="text-[#ADB9BA] hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg></a>
+                                <a href="#" aria-label="Behance" class="text-[#ADB9BA] hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 7h-7v-2h7v2zm1.732 6c-.445 1.72-1.48 3.183-3.182 4.163-.61.353-1.305.537-2.05.537-1.241 0-2.252-.583-2.888-1.527-.635-.945-.953-2.23-.953-3.856h3.21c0 .998.145 1.737.433 2.217s.71.72 1.264.72c.554 0 .98-.24 1.28-.72s.45-.96.45-1.44c0-.554-.15-1.02-.45-1.404s-.73-.576-1.29-.576h-1.92v-2.18h1.86c.976 0 1.636-.49 1.98-1.468.345-.98.345-2.04 0-3.18h3.5c.21 1.28.21 2.52 0 3.72zm-12.732-4h-4v4h4c1.104 0 2 .896 2 2s-.896 2-2 2h-4v4h-2v-12h6c1.104 0 2 .896 2 2s-.896 2-2 2zm-6 6h4v-4h-4v4z"/></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8">
+                    <div class="container mx-auto px-6 py-4 text-center text-sm text-gray-500">
+                        <p>&copy; 2024 CONSOF. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    </script>
+</body>
+</html>
